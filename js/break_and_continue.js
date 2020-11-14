@@ -1,21 +1,29 @@
-do {    var userInput = Number(prompt("Pick an odd number between 1 and 50"));
-if (userInput % 2 === 0){
-    alert(userInput + " is not odd, please try again")
-}else if (userInput > 50){
-    alert(userInput + " is greater than 50, please try again")
-}else if (userInput < 1){
-    alert(userInput + " is less than 1, please try again")
-}else{        alert("You picked a good one!");
-break    }
-} while (true)
-if(userInput=Number)
-    alert("Yikes! skipping this is number:")
-}else if (Number % 2)
+while(isNaN(userNum) ||(userNum % 2 ==0) ||(userNum < 1)||(userNum > 50)){
+    var userNum = prompt("Please enter number between 1 - 50!")
+}
 
-// do{
+console.log("Number to skip is: " + userNum);
+
+for (var i = 1; i< 50; i++){
+    if (i == userNum) {
+        console.log("Yikes! Skipping number: " + i);
+        continue;
+    }else if (i % 2 ===0){
+        continue;
+    }else{
+        console.log("Here is an odd number: " + i);
+    }
+}
+
+
+
+
+
+
+
 //     var oddnum=prompt("enter odd number 1-50")
 //
-/
+//
 // while(num<50){
 //     num++;
 //     if(num % 2 !==0){
