@@ -28,7 +28,7 @@
 
 
     console.log('Removing "The Sun" from the beginning of the planets array.');
-    var removeItem= planets.shift();
+    var removeItem = planets.shift();
     console.log('Task complete:' + removeItem[0]);
     console.log(planets);
 
