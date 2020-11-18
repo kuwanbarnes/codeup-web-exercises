@@ -12,13 +12,19 @@
      *  > console.log(person.lastName) // "Sanchez"
      */
 
-        var person = {};
-        person.firstname = 'Kuwan';
-        person.lastname = 'Barnes';
+        var person = {
+        firstname: 'Kuwan',
+        lastname: 'Barnes'
+    }
+        console.log(person.firstname)
+        console.log(person.lastname)
 
-        console.log(person.firstname);
-        console.log(person.lastname);
-    }return("Hello from "+ sayHello())
+
+    person.sayHello=function (){
+            return'Hello '+" "+this.firstname+" "+this.lastname;
+
+    }
+    console.log(person.sayHello());
     /**
      * TODO:
      * Add a sayHello method to the person object that returns a greeting using
@@ -43,11 +49,24 @@
      * and console.log the relevant messages for each person
      */
 
-    // var shoppers = [
-    //     {name: 'Cameron', amount: 180},
-    //     {name: 'Ryan', amount: 250},
-    //     {name: 'George', amount: 320}
-    // ];
+    var shoppers = [
+        {name: 'Cameron', amount: 180},
+        {name: 'Ryan', amount: 250},
+        {name: 'George', amount: 320}
+    ];
+
+shoppers.forEach(function (shopper){
+
+    if(shopper.amount > 200){
+        console.log(shopper.amount * .12)
+        console.log(`Total of:  ${shopper.amount - shopper.amount * .12}`);
+
+    } else {
+        console.log("No discount")
+        console.log(shopper.amount)
+    }
+})
+
 
     /** TODO:
      * Create an array of objects that represent books and store it in a
@@ -61,6 +80,44 @@
      * > console.log(books[0].author.firstName) // "Douglas"
      * > console.log(books[0].author.lastName) // "Adams"
      */
+    var books=[{
+        title: 'Green eggs and Ham',
+            author: {
+        firstName: 'Dr.',
+            lastName: 'Suess'
+    }
+    },
+    {
+        title: 'Horton hears a Who',
+            author: {
+        firstName: 'dr.',
+            lastName: 'Suess'
+    }
+    },
+    {
+        title: 'The Salmon of Doubt',
+            author: {
+        firstName: 'douglas',
+            lastName: 'adams'
+    }
+    },
+    {
+        title: 'Harry Potter',
+            author: {
+        firstName: 'J',
+            lastName: 'Rowling'
+    }
+    },
+    {
+        title: 'HP2',
+            author: {
+        firstName: 'Jk',
+            lastName: 'Rowling'
+    }
+    }
+]
+    console.log(books[0].title)
+
 
     /**
      * TODO:
@@ -86,7 +143,10 @@
      *      ---
      *      ...
      */
-
+books.forEach(function (book,i){
+    console.log(i)
+    console.log(book.title)
+})
     /**
      * Bonus:
      * - Create a function named `createBook` that accepts a title and author
@@ -98,4 +158,20 @@
      *   `showBookInfo` function.
      */
 
+    // books.createBoook=function (Title,Author){
+   //     {return books}}
+//            var stage = Author.split(",")
+//            var newFirst = stage[0];
+//            var newLast = stage[1]
+//            return {
+//                title: Title,
+//                author: {
+//                    firstName: newFirst,
+//                    lastName: newLast
+//                }
+//            }
+//
+//        }
+//    }
+//     console.log((books))
 })();
