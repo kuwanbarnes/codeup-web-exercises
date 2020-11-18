@@ -158,20 +158,25 @@ books.forEach(function (book,i){
      *   `showBookInfo` function.
      */
 
-    // books.createBoook=function (Title,Author){
-   //     {return books}}
-//            var stage = Author.split(",")
-//            var newFirst = stage[0];
-//            var newLast = stage[1]
-//            return {
-//                title: Title,
-//                author: {
-//                    firstName: newFirst,
-//                    lastName: newLast
-//                }
-//            }
-//
-//        }
-//    }
-//     console.log((books))
+
+    function createBoook(Title,Author){
+
+        var stage = Author.split(",")
+
+                var newFirst = stage[0];
+
+        var newLast = stage[1]
+
+           return {
+              title: Title,
+              author: {
+                   firstName: newFirst ,
+                   lastName: newLast
+               }
+           }
+
+        }
+
+
+//     console.log()
 })();
