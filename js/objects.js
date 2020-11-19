@@ -13,15 +13,15 @@
      */
 
         var person = {
-        firstname: 'Kuwan',
-        lastname: 'Barnes'
+        firstName: 'Kuwan',
+        lastName: 'Barnes'
     }
-        console.log(person.firstname)
-        console.log(person.lastname)
+        console.log(person.firstName)
+        console.log(person.lastName)
 
 
     person.sayHello=function (){
-            return'Hello '+" "+this.firstname+" "+this.lastname;
+            return'Hello from, '+" "+this.firstName+" "+this.lastName + "!";
 
     }
     console.log(person.sayHello());
@@ -58,11 +58,12 @@
 shoppers.forEach(function (shopper){
 
     if(shopper.amount > 200){
+        console.log(shopper.name+" total before discount"+shopper.amount)
         console.log(shopper.amount * .12)
-        console.log(`Total of:  ${shopper.amount - shopper.amount * .12}`);
+        console.log(`New Total :  ${shopper.amount - shopper.amount * .12}`);
 
     } else {
-        console.log("No discount")
+        console.log(shopper.name+"No discount")
         console.log(shopper.amount)
     }
 })
@@ -116,7 +117,7 @@ shoppers.forEach(function (shopper){
     }
     }
 ]
-    console.log(books[0].title)
+ //   console.log(books[0].title)
 
 
     /**
@@ -144,8 +145,11 @@ shoppers.forEach(function (shopper){
      *      ...
      */
 books.forEach(function (book,i){
-    console.log(i)
+    console.log("Book # "+i)
     console.log(book.title)
+    console.log(book.author)
+
+
 })
     /**
      * Bonus:
@@ -159,7 +163,8 @@ books.forEach(function (book,i){
      */
 
 
-    function createBoook(Title,Author){
+
+    books.createBook= function (Title,Author){
 
         var stage = Author.split(",")
 
@@ -176,7 +181,6 @@ books.forEach(function (book,i){
            }
 
         }
-
 
 //     console.log()
 })();
