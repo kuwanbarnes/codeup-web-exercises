@@ -1,0 +1,26 @@
+form {
+    overflow: hidden;
+}
+
+label {
+    float: left;
+    width: 200px;
+    padding-right: 24px;
+}
+
+input {
+    float: left;
+    width: calc(100% - 200px);
+}
+
+button {
+    float: right;
+    width: calc(100% - 200px);
+}
+
+
+
+body  {background-image:url("../img/Screen-Shot-2020-10-19-at-4.48.19-PM.png");
+    background-color: #cccccc;
+}
+
