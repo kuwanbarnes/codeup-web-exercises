@@ -1,0 +1,66 @@
+/* selector for id="container" */
+body {
+    background-image: url("../img/EKiX9z.jpg");
+    background-repeat: repeat-x;
+background-size: cover;
+
+}
+#container{
+    margin: 50px auto;
+    width: 500px;
+    padding: 10px;
+    /*background-image: url("../img/142779261-golden-ticket-royal-vip-card-design-with-blank-textured-background-gold-blank-background-with-abstra.jpg");*/
+    border-style: inset;
+    border-color: black;
+    border-width: thick;
+    border-radius: 50px ;
+
+
+}
+@media screen and (min-width:500px) {
+    #container {
+        background-image: url("../img/142779261-golden-ticket-royal-vip-card-design-with-blank-textured-background-gold-blank-background-with-abstra.jpg");
+    }
+}
+
+
+/*  selector for all "h1" elements
+    that are a descendent of id="container"
+    and have a class of "fancy-header" */
+#container h1.fancy-header {
+    color: black;
+    text-decoration: underline;
+    font-family: 'Pinyon Script', cursive;
+}
+p{
+font-family: 'Pinyon Script', cursive;
+}
+/* selector for all "em" elements */
+em {
+    font-weight: bold;
+}
+
+/* selector for all elements with class="article" */
+.article {
+    clear:both;
+}
+
+/*  selector for all "anchor" elements
+    that are a direct child of an element with class="article" */
+.article>a{
+    float:right;
+}
+
+div#b {
+    position: center;
+    top:40px;
+    left:0;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border-color: black;
+    border-width: thick;
+    border-style: solid;
+    background: url("../img/142779261-golden-ticket-royal-vip-card-design-with-blank-textured-background-gold-blank-background-with-abstra.jpg");
+}
+
