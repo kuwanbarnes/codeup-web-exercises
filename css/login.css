@@ -50,14 +50,18 @@ fieldset {
 
 .form-label {
     font-weight: bold;
+
     /* The text of a label must be bold */
 }
 
 .btn-block {
     width: 100%;
+
     /* This element should use 100% of the width */
 }
-
+#usernam #password{
+    border:1px solid lightslategray;
+}
 .btn {
     padding: 8px;
     color: white;

@@ -1,0 +1,51 @@
+body, html {
+
+    width: auto;
+    padding: 2px;
+    margin-top: 2px;
+    margin-left: 5px;
+    margin-right: 2em;
+
+
+    font-family: Arial, Ubuntu, sans-serif;
+
+}
+.IM, .SM, .WM, .EM{
+    padding-top:10px;
+    padding-bottom: 10px;
+    padding-left: 2px;
+    padding-right: 4px;
+    width: 100%;
+   margin:.5em;
+margin-right: 100em;
+    border: 1px solid gray;
+    border-radius: 1mm;
+    font-size: 18px;
+
+}
+.IM {
+
+
+    color: blue;
+    background-color: cornflowerblue;
+
+}
+.SM{
+
+    color: #0fb784;
+    background-color: #cbffcd;
+
+
+}
+.WM{
+
+    color: goldenrod;
+    background-color: palegoldenrod;
+
+}
+.EM{
+
+    color: indianred;
+    background-color: mistyrose;
+
+}
