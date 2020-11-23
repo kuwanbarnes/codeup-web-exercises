@@ -21,13 +21,20 @@ header {
     background-size: cover;
     min-height: 300px;
     padding-top: 275px;
+
+
 }
 a {
     color: var(--link-color);
 }
 .top-nav {
+    width: 100%;
+    display: inline-block;
     background: var(--light-bg);
     z-index: 1000;
+    margin: 0;
+
+
 }
 .nav-item {
     display: inline-block;
