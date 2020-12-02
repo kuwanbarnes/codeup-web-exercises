@@ -1,9 +1,9 @@
 .jumbotron{
-    justify-content: center;
+    width: auto;
 }
 h1{
-    background-color: #cccccc;
+    background-color: black;
     text-align: center;
-
+opacity: .5;
 }
 
