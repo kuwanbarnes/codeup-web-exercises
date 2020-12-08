@@ -9,43 +9,69 @@
 <h2 id="message">This BOM will self destruct in <span id="timer">5</span> seconds...</h2>
 <button id="defuser">Defuse the BOM</button>
 
+<!--<script>-->
+<!--(function() {-->
+<!--    "use strict";-->
+
+<!--    var detonationTimer = 5;-->
+
+<!--    // TODO: This function needs to be called once every second-->
+<!--    function updateTimer() {-->
+<!--        if (detonationTimer == 0) {-->
+<!--            alert('EXTERMINATE!');-->
+<!--            document.body.innerHTML = '';-->
+<!--        } else if (detonationTimer > 0) {-->
+<!--            document.getElementById('timer').innerHTML = detonationTimer;-->
+<!--        }-->
+
+<!--        detonationTimer&#45;&#45;;-->
+<!--    }-->
+<!--let interval =setInterval(updateTimer,1000);-->
+<!--    -->
+<!--    // TODO: When this function runs, it needs to-->
+<!--    // cancel the interval/timeout for updateTimer()-->
+<!--    var movieDelay= 4000;-->
+<!--    function defuseTheBOM() {-->
+<!--        clearInterval((interval),movieDelay);-->
+<!--        alert("That was close")-->
+
+<!--    }-->
+
+<!--    // Don't modify anything below this line!-->
+<!--    //-->
+<!--    // This causes the defuseTheBOM() function to be called-->
+<!--    // when the "defuser" button is clicked.-->
+<!--    // We will learn about events in the DOM lessons-->
+<!--    var defuser = document.getElementById('defuser');-->
+<!--    defuser.addEventListener('click', defuseTheBOM);-->
+<!--})();-->
+<!--</script>-->
+<h1 id="main-heading">Hello World!</h1>
+<div id="main-section">
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+</div>
 <script>
-(function() {
     "use strict";
+    (function() {
+        // Get the main heading h1 by id
+        var mainHeading = document.getElementById('main-heading');
 
-    var detonationTimer = 5;
+        console.log(mainHeading.innerHTML); // Prints Hello World!
 
-    // TODO: This function needs to be called once every second
-    function updateTimer() {
-        if (detonationTimer == 0) {
-            alert('EXTERMINATE!');
-            document.body.innerHTML = '';
-        } else if (detonationTimer > 0) {
-            document.getElementById('timer').innerHTML = detonationTimer;
-        }
+        // Assign a new value to the inner HTML of the main heading
+        mainHeading.innerHTML = "Hello Codeup!";
 
-        detonationTimer--;
-    }
-var interval =setInterval(updateTimer,1000);
+        console.log(mainHeading.innerHTML); // Prints Hello Codeup!
 
-    // TODO: When this function runs, it needs to
-    // cancel the interval/timeout for updateTimer()
-    var movieDelay= 4000;
-    function defuseTheBOM() {
-        clearInterval((interval),movieDelay);
-        alert("That was close")
+        // Get the main section div by id
+        var mainSection = document.getElementById('main-section');
 
-    }
-
-    // Don't modify anything below this line!
-    //
-    // This causes the defuseTheBOM() function to be called
-    // when the "defuser" button is clicked.
-    // We will learn about events in the DOM lessons
-    var defuser = document.getElementById('defuser');
-    defuser.addEventListener('click', defuseTheBOM);
-})();
+        console.log(mainSection.innerHTML);
+        // Prints
+        // <p>Paragraph 1</p>
+        // <p>Paragraph 2</p>
+    })();
 </script>
-
 </body>
 </html>
