@@ -75,9 +75,13 @@
     'use strict';
 
     // create a handler function
+
     var listener1 = function (event) {
-        mainHeader.innerHTML = "JavaScript is the best";
-    }
+        var mainHeader = document.getElementById("main-header")
+
+            mainHeader.innerHTML = "JavaScript is the best";
+        }
+
 
     // register the listener to handle clicks on btn1
     document.getElementById('btn1').addEventListener('click', listener1);
@@ -87,7 +91,8 @@
 
     // create a handler function
     var listener2 = function (event) {
-        document.getElementById("sub-header");
+        var subHeader = document.getElementById("sub-header")
+        subHeader.style['color'] ='blue';
     }
 
     // register the listener to handle clicks on btn1
@@ -108,7 +113,11 @@
 
     // create a handler function
     var listener4 = function (event) {
-        for(let i =0;i < listItems.length; i++){
+        var listItems = document.getElementsByTagName("li")
+                for (var i = 0; i < listItems.length; i++) {
+                    console.log(listItems[i]);
+                }
+    for(let i =0;i < listItems.length; i++){
             if(i % 2 ===0){
                 listItems[i].style.color ="grey"
             }
