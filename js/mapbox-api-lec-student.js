@@ -1,3 +1,29 @@
+// Page dropdown and buttons
+var zoomSelect = document.getElementById("zoom-select")
+zoomSelect.addEventListener("change", function (event) {
+    var zoomValue = zoomSelect.options[zoomSelect.selectedIndex].value;
+    map.setZoom(parseInt(zoomValue));
+})
+
+var styleSelect = document.getElementById("style-select")
+styleSelect.addEventListener("change", function (event) {
+    var styleValue = styleSelect.options[styleSelect.selectedIndex].value;
+    var styleString = "mapbox://styles/mapbox/" + styleValue;
+    map.setStyle(styleString);
+})
+
+var resetButton = document.getElementById("reset-button")
+resetButton.addEventListener("click", function (event) {
+    map.setZoom(10);
+    map.setCenter([-98.4916, 29.4252]);
+    map.setStyle('mapbox://styles/mapbox/streets-v9');
+    marker.setLngLat([-98.4916, 29.4252]);
+    popup.setText("Codeup");
+    //TODO: RESET the dropdown to initial option
+    //TODO: RESET style dropdown to initial option
+});
+
+
 /**********************************************
  * 			SETTING UP KEYS.JS
  *********************************************/
@@ -101,35 +127,32 @@ marker.setPopup(codeupPopup)
 //         map.jumpTo({center:result});//map.setCenter([-98.489615, 29.426827])
 //         map.setZoom(20);
 //         marker.setLngLat(result)
-let searchString= prompt("What would you like to search?");
+let searchString;
 
-document.getElementById("search-button").addEventListener("click",
-    function () {
-        searchString = prompt("What would you like to search?");
-        geocode("600 Navarro St #350, San antonio,TX 78205", mapboxToken).then(function (result) {
-            console.log(result);
-            map.flyTo({
-                center: result,
-                zoom: 14,
-                speed: 1,
-                curve: 1
-            });
-            //map.setCenter([-98.489615, 29.426827])
-            // map.setZoom(20);
-            marker.setLngLat(result);
+// Add an event listener for the search-button 'button'
+document.getElementById("search-button").addEventListener("click", function(){
+    searchString = prompt("What would you like to search?");
+    geocode(searchString, mapboxToken).then(function(result){
+        console.log(result);
+        // map.setCenter(result); // i.e. map.setCenter([-98.48, 29.426])
+        map.flyTo({
+            center: result,
+            zoom: 14,
+            speed: 4,
+            curve: 1,
+        })
+        marker.setLngLat(result);
+
+        // Want to add a popup that displays the name of the location at the LONG / LAT coordinates we just found
+        reverseGeocode(result, mapboxToken).then(function(placeName) {
+            // set the text of the popup to "New York City" (for example)
+            console.log("after reverse geocode, the place name is: " + placeName);
+            popup.setText(placeName);
+            // the popup is already added to the marker, so NO need to add it again with marker.setPopup!
+
         })
     })
-//TODO: Instead of setCenter try using map.flyTo()
-
-
-
-
-// TODO TOGETHER: Reverse Geocoding: Using the reverse geocoding method, enter the coordinates {lng: -98.4861, lat: 29.4260} to get a physical address for the alamo
-
-reverseGeocode(results,mapboxToken).then(function (placeName){
-    popup.setText(placeName);
-    marker.setPopup(popup);
-})
+});
 // TODO: Reverse geocode coordinates of your choice using the reverse geocode method
 
 
