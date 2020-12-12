@@ -31,13 +31,15 @@ var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/navigation-preview-night-v4',
     center:[-98.4916, 29.4252],
-    zoom:9,
+    zoom:20,
     bearingSnap: 7
 });
 
 var marker = new mapboxgl.Marker({
-    color:"blue"
+    color:"blue",
+    icon:"bike"
 })
+
     .setLngLat([-98.416045,29.5029648])
     .addTo(map);
 var marker2 = new mapboxgl.Marker({
@@ -45,29 +47,47 @@ var marker2 = new mapboxgl.Marker({
 })
     .setLngLat([-98.4055947,29.5104626])
     .addTo(map);
+var marker3 = new mapboxgl.Marker({
+    color:"green"
+})
+    .setLngLat([ -98.46517990628097, 29.51909969374734])
+    .addTo(map);
 
 // TODO TOGETHER: Using the Geocoder helper function, log the coordinates of Codeup and recenter the map to focus on Codeup. Comment out previous map code.
 geocode("104 Lanark Dr,San Antonio,Texas 78218",mapboxToken)
     .then(function (result){
         console.log(result);
         map.setCenter(result);//map.setCenter([-98.489615, 29.426827])
-        map.setZoom(20);
+        map.setZoom(1);
         marker.setLngLat(result)
         map.setCenter(result);
-        var codeupPopup=new mapboxgl.Popup()
-            .setHTML("<p>Welcome to BIG BIBBS!</p>")
+        var codeupPopup1=new mapboxgl.Popup()
+            .setHTML("<p>BIG BIBBS</p>")
             .addTo(map);
-        marker.setPopup(codeupPopup)
+        marker.on('click',codeupPopup1);
     })
 geocode("4453 Walzem Rd,San Antonio,Texas 78218",mapboxToken)
     .then(function (result){
         console.log(result);
         map.setCenter(result);//map.setCenter([-98.489615, 29.426827])
-        map.setZoom(20);
+        map.setZoom(13);
         marker2.setLngLat(result)
         map.setCenter(result);
-        var codeupPopup=new mapboxgl.Popup()
-            .setHTML("<p>Welcome to Wayne's Wings!</p>")
+        var codeupPopup2=new mapboxgl.Popup()
+            .setHTML("<p>Wayne's Wings</p>")
             .addTo(map);
-        marker2.setPopup(codeupPopup)
+        marker2.setPopup(codeupPopup2);
     })
+geocode("8402 Broadway, San Antonio, TX 78209",mapboxToken)
+    .then(function (result){
+        console.log(result);
+        map.setCenter(result);//map.setCenter([-98.489615, 29.426827])
+        map.setZoom(13);
+        marker3.setLngLat(result)
+        map.setCenter(result);
+        var codeupPopup=new mapboxgl.Popup()
+            .setHTML("<p>Raising Cane's</p>")
+            .addTo(map);
+        marker3.setPopup(codeupPopup)
+    })
+marker.on('click',"codeupPop1")

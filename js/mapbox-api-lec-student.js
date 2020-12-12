@@ -60,11 +60,11 @@ var map = new mapboxgl.Map({
 
 
 // TODO TOGETHER: Add a marker to the map using the following coordinates [-98.4916, 29.4260]. This marker will mark the Alamo on our map.
-var marker = new mapboxgl.Marker({
-    color:"blue"
-})
-    .setLngLat([-98.4916, 29.4260])
-    .addTo(map);
+    var marker = new mapboxgl.Marker({
+        color:"blue"
+    })
+        .setLngLat([-98.4916, 29.4260])
+        .addTo(map);
 // TODO TOGETHER: Change the color of the marker
 
 
