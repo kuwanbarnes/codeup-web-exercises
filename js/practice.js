@@ -202,3 +202,111 @@ assert(productOfAll([3, 4, 5]), 60, "Exercise 64");
 assert(productOfAll([2, 2, 3, 0]), 0, "Exercise 64");
 addToDone("Exercise 64 is correct.")
 
+// Exercise 65
+// Write a function definition named getHighestNumber that takes in sequence of numbers and returns the largest number.
+function getHighestNumber(arr) {
+    arr.sort();
+    return arr[arr.length - 1];
+}
+
+assert(getHighestNumber([1, 2, 3]), 3, "Exercise 65");
+assert(getHighestNumber([1, 5, 2, 3, 4]), 5, "Exercise 65");
+assert(getHighestNumber([5, 1, 2, 4, 9]), 9, "Exercise 65");
+addToDone("Exercise 65 is correct.")
+
+
+
+
+// Exercise 66
+// Write a function definition named getSmallestNumber that takes in sequence of numbers and returns the smallest number.
+function getSmallestNumber(arr) {
+    arr.sort();
+    return arr[0];
+}
+
+assert(getSmallestNumber([1, 2, 3]), 1, "Exercise 66");
+assert(getSmallestNumber([3, 5, 9, 8, 1]), 1, "Exercise 66");
+assert(getSmallestNumber([8, 9, 4, 5, 7]), 4, "Exercise 66");
+addToDone("Exercise 66 is correct.")
+
+
+// Exercise 67
+// Write a function definition named onlyOddNumbers that takes in sequence of numbers and returns the odd numbers in an array.
+function onlyOddNumbers(arr) {
+    var final = [];
+    for(var i=0;i<arr.length;i++) {
+        if(isOdd(arr[i])) {
+            final.push(arr[i]);
+        }
+    }
+    return final;
+}
+assert(onlyOddNumbers([1, 2, 3]), [1, 3], "Exercise 67");
+assert(onlyOddNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-5, -3, -1, 1, 3, 5], "Exercise 67");
+assert(onlyOddNumbers([-4, -3, 1]), [-3, 1], "Exercise 67");
+addToDone("Exercise 67 is correct.")
+
+
+
+// Exercise 68
+// Write a function definition named onlyEvenNumbers that takes in sequence of numbers and returns the even numbers in an array.
+function onlyEvenNumbers(arr) {
+    var final = [];
+    for(var i=0;i<arr.length;i++) {
+        if(isEven(arr[i])) {
+            final.push(arr[i]);
+        }
+    }
+    return final;
+}
+assert(onlyEvenNumbers([1, 2, 3]), [2], "Exercise 68");
+assert(onlyEvenNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-4, -2, 2, 4], "Exercise 68");
+assert(onlyEvenNumbers([-4, -3, 1]), [-4], "Exercise 68");
+addToDone("Exercise 68 is correct.")
+
+
+// Exercise 69
+// Write a function definition named onlyPositiveNumbers that takes in sequence of numbers and returns the positive numbers in an array.
+function onlyPositiveNumbers(arr) {
+    var final = [];
+    for(var i=0;i<arr.length;i++) {
+        if(arr[i] > 0) {
+            final.push(arr[i]);
+        }
+    }
+    return final;
+}
+assert(onlyPositiveNumbers([1, 2, 3]), [1, 2, 3], "Exercise 69");
+assert(onlyPositiveNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [1, 2, 3, 4, 5], "Exercise 69");
+assert(onlyPositiveNumbers([-4, -3, 1]), [1], "Exercise 69");
+addToDone("Exercise 69 is correct.")
+
+
+// Exercise 70
+// Write a function definition named onlyNegativeNumbers that takes in sequence of numbers and returns the negative numbers in an array.
+function onlyNegativeNumbers(arr) {
+    var final = [];
+    for(var i=0;i<arr.length;i++) {
+        if(arr[i] < 0) {
+            final.push(arr[i]);
+        }
+    }
+    return final;
+}
+assert(onlyNegativeNumbers([1, 2, 3]), [], "Exercise 70");
+assert(onlyNegativeNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]), [-5, -4, -3, -2, -1], "Exercise 70");
+assert(onlyNegativeNumbers([-4, -3, 1]), [-4, -3], "Exercise 70");
+addToDone("Exercise 70 is correct.");
+
+
+
+// Exercise 71
+// Write a function definition named hasEvens that takes in sequence of numbers and returns true if there are any even numbers in the sequence
+function hasEvens(arr) {
+    for(var i=0;i<arr.length;i++) {
+        if(arr[i] % 2 === 0) {
+            return true;
+        }
+    }
+    return false;
+}
