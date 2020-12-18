@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Konami Code</title>
+
+
+</head>
+<body>
+<h1>Konami Code</h1>
+
+
+
+<script src="js/jsQuery.js"></script>
+<script>
+    "use strict";
+
+    $(document).keyup(function(event){
+        console.log(event.keyCode);
+    });
+
+    var keysAllowed={
+        37:'left',
+        38:'up',
+        39: 'right',
+        40: 'down',
+        66:'b',
+        65:'a',
+        13:'enter'
+    };
+    //konami code sequences
+    var konamiCode=['up','up','down','down','left','right','left','right','b','a','enter'];
+    var konamiPosition =0;
+    //add keydown event to listener
+    document.addEventListener("keydown", function (e){
+        var key = keysAllowed[e.keyCode];
+        var requiredKey = konamiCode[konamiPosition];
+        if(key == requiredKey){
+            konamiPosition++;
+            if(konamiPosition ===konamiCode.length){
+                cheatCode();
+                konamiPosition=0;
+            }
+
+        }else{
+            konamiPosition = 0;
+        }
+    });
+    function cheatCode(){
+        alert("You've added 30 lives!" );
+        console.log('works');
+        var audio = new Audio('http://soundfxcenter.com/video-games/super-mario-bros/8d82b5_Super_Mario_Bros_1_Up_Sound_Effect.mp3');
+        audio.play();
+        document.body.style.backgroundColor ='black';
+        document.body.style.backgroundImage ="url('https://tenor.com/view/mario-cool-dance-yahoo-super-mario-gif-12778263')";
+    }
+</script>
+</body>
+</html>

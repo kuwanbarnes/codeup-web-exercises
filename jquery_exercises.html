@@ -30,9 +30,19 @@ $(document).ready(function() {
         $(this).css('background-color', '#FF0');;
     });
 
-    $('.codeup').dblclick(function() {
-        $(this).css('font-size', '18px');;
+    $('p').dblclick(function() {
+        $('p').css('font-size', '18px');;
     });
+
+    $('li').hover(
+        function() {
+            $(this).css('color', 'red');
+        },
+        function() {
+            $(this).css('color', '#000');
+        }
+    );
+
 
 
 
