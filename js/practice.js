@@ -879,3 +879,27 @@ assert(
     "Exercise 101"
 );
 addToDone("Exercise 101 is complete.");
+
+function multiply(a, b){
+    return a * b
+}
+
+function disemvowel(str) {
+    return str.replace(/[aeiou]/gi, '');
+}
+String.prototype.toJadenCase = function () {
+
+    function capitalizeFirstLetter(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    return this.split(' ').map(capitalizeFirstLetter).join(' ');
+};
+
+// var isSquare = function(n){
+//     if(n %2 === 0)
+//         return true;// fix me
+// }
+function isSquare(n) {
+    return Math.sqrt(n) % 1 === 0;
+}
