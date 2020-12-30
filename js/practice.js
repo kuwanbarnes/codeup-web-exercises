@@ -342,7 +342,7 @@ assert(hasOdds([1, 2, 3]), true, "Exercise 73");
 assert(hasOdds([2, 5, 6]), true, "Exercise 73");
 assert(hasOdds([3, 3, 3]), true, "Exercise 73");
 assert(hasOdds([2, 4, 6]), false, "Exercise 73");
-addToDone("Exercise 73 is correct."
+addToDone("Exercise 73 is correct.");
 // Exercise 75
 // Write a function definition named countNegatives that takes in sequence of numbers and returns a count of the number of negative numbers
 function countNegatives(arr) {
@@ -945,7 +945,7 @@ changeMe = false;
 console.log(changeMe)
 const entree ='Enchiladas'
 console.log(entree)
-entree= 'Tacos';
+// entree= 'Tacos';
 console.log (entree)
 let levelUp = 10;
 let powerLevel = 9001;
@@ -990,7 +990,7 @@ sale =false;
 if (sale=== true){
     console.log ('Time to buy!')
 }
-let sale = true;
+
 
 sale = false;
 
@@ -1005,3 +1005,103 @@ if(hungerLevel >7){
 }else{
     console.log('We can eat later!')
 }
+function second1(input){
+    return input[1];
+}
+function third1(input){
+    return input[2]
+}
+function forth1(input){
+    return input[3]
+}
+function last1(input){
+    var str = input;
+    var lastLetter = str[str.length - 1];
+    return lastLetter
+}
+function secondToLast(input){
+    var str = input;
+    var lastLetter = str[str.length - 2];
+    return lastLetter
+}
+function thirdToLast(input){
+    var str = input;
+    var lastLetter = str[str.length - 3];
+    return lastLetter
+}
+function firstAndSecond(input) {
+
+    var firstItem = input[0];
+    var lastItem = input[1];
+
+    var objOutput = [firstItem, lastItem];
+
+
+    return objOutput;
+}
+function firstAndLast(input) {
+
+    var firstItem = input[0];
+    var lastItem = input[input.length-1];
+
+    var objOutput = [firstItem, lastItem];
+
+
+    return objOutput;
+    let mood = 'sleepy';
+    let tirednessLevel = 6;
+
+    if(mood==='sleepy' && tirednessLevel>8 ){
+        console.log("time to sleep")
+    }else{
+        console.log ('not bed time yet')
+    }
+    let wordCount = 1;
+
+    if (wordCount) {
+        console.log("Great! You've started your work!");
+    } else {
+        console.log('Better get to work!');
+    }
+
+
+    let favoritePhrase = '';
+
+    if (favoritePhrase) {
+        console.log("This string doesn't seem to be empty.");
+    } else {
+        console.log('This string is definitely empty.');
+    }
+    let tool = 'marker';
+
+// Use short circuit evaluation to assign  writingUtensil variable below:
+    let writingUtensil=tool||'pen'
+
+    console.log(`The ${writingUtensil} is mightier than the sword.`);
+    let isLocked = false;
+
+    if (isLocked) {
+        console.log('You will need a key to open the door.');
+    } else {
+        console.log('You will not need a key to open the door.');
+    }
+    isLocked?console.log('You will need a key to open the door.'):console.log('You will not need a key to open the door.');
+
+    let isCorrect = true;
+
+    if (isCorrect) {
+        console.log('Correct!');
+    } else {
+        console.log('Incorrect!');
+    }
+    isCorrect?console.log('Correct!'):console.log('Incorrect!');
+
+    let favoritePhrase1 = 'Love That!';
+
+    if (favoritePhrase1 === 'Love That!') {
+        console.log('I love that!');
+    } else {
+        console.log("I don't love that!");
+    }}
+    favoritePhrase1?console.log('I love that!'):console.log("I don't love that!");
+favoritePhrase === 'Love That!' ? console.log('I love that!') : console.log("I don't love that!");
