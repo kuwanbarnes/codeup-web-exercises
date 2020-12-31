@@ -1169,19 +1169,99 @@ spaceship.numEngines = 9;
 
 delete spaceship['Secret Mission'];
 
-let retreatMessage = 'We no longer wish to conquer your planet. It is full of dogs, which we do not care for.';
+let retreatMessage1 = 'We no longer wish to conquer your planet. It is full of dogs, which we do not care for.';
 
 // Write your code below
 
-let alienShip = {
+let alienShip1 = {
     retreat() {
-        console.log(retreatMessage)
+        console.log(retreatMessage1)
     },
     takeOff() {
         console.log('Spim... Borp... Glix... Blastoff!')
     }
 };
 
-alienShip.retreat();
+alienShip1.retreat();
 
-alienShip.takeOff();
+alienShip1.takeOff();
+
+let spaceship1 = {
+    passengers: [{name: 'Space Dog'}],
+    telescope: {
+        yearBuilt: 2018,
+        model: "91031-XLT",
+        focalLength: 2032
+    },
+    crew: {
+        captain: {
+            name: 'Sandra',
+            degree: 'Computer Engineering',
+            encourageTeam() { console.log('We got this!') },
+            'favorite foods': ['cookies', 'cakes', 'candy', 'spinach'] }
+    },
+    engine: {
+        model: "Nimbus2000"
+    },
+    nanoelectronics: {
+        computer: {
+            terabytes: 100,
+            monitors: "HD"
+        },
+        'back-up': {
+            battery: "Lithium",
+            terabytes: 50
+        }
+    }
+};
+
+let capFave = spaceship1.crew.captain['favorite foods'][0];
+
+let firstPassenger = spaceship1.passengers[0];
+console.log(firstPassenger)
+let greenEnergy = obj => {
+    obj['Fuel Type'] = 'avocado oil';
+}
+
+let remotelyDisable = obj => {
+    obj.disabled = true;
+}
+
+greenEnergy(spaceship);
+
+remotelyDisable(spaceship);
+
+console.log(spaceship)
+let spaceship2 = {
+    crew: {
+        captain: {
+            name: 'Lily',
+            degree: 'Computer Engineering',
+            cheerTeam() { console.log('You got this!') }
+        },
+        'chief officer': {
+            name: 'Dan',
+            degree: 'Aerospace Engineering',
+            agree() { console.log('I agree, captain!') }
+        },
+        medic: {
+            name: 'Clementine',
+            degree: 'Physics',
+            announce() { console.log(`Jets on!`) } },
+        translator: {
+            name: 'Shauna',
+            degree: 'Conservation Science',
+            powerFuel() { console.log('The tank is full!') }
+        }
+    }
+};
+
+// Write your code below
+
+for (let crewMember in spaceship2.crew) {
+    console.log(`${crewMember}: ${spaceship2.crew[crewMember].name}`)
+};
+
+for (let crewMember in spaceship2.crew) {
+    console.log(`${spaceship2.crew[crewMember].name}: ${spaceship2.crew[crewMember].degree}`)
+};
