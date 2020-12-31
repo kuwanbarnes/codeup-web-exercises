@@ -1265,3 +1265,12 @@ for (let crewMember in spaceship2.crew) {
 for (let crewMember in spaceship2.crew) {
     console.log(`${spaceship2.crew[crewMember].name}: ${spaceship2.crew[crewMember].degree}`)
 };
+const robot = {
+    model: '1E78V2',
+    energyLevel: 100,
+    provideInfo() {
+        return `I am ${this.model} and my current energy level is ${this.energyLevel}.`
+    }
+};
+
+console.log(robot.provideInfo());
