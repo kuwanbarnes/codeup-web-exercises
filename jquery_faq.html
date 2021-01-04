@@ -14,10 +14,10 @@
             background-color: blue;
         }
         .pink{
-            background-color: pink;
+            background-color: red;
         }
         .green{
-            background-color: green;
+            background-color: darkblue;
         }
         .yellow{
             background-color: yellow;
@@ -29,10 +29,13 @@
             background-color: gray;
         }
         .orange{
-            background-color: orange;
+            background-color: blue;
         }
         .purple {
-            background-color: purple;
+            background-color: red;
+        }
+        .random{
+            background-color: #55ACEE;
         }
         .highlighted {
             background-color: #FF0;
@@ -73,25 +76,66 @@
     <dt class ='gold'>What is the most-visited national park?</dt>
     <dd>Golden Gate National Recreation Area</dd>
 
-    <dt class ='blue'> What is the National Park Service budget?</dt>
+    <dt class ='randomx'> What is the National Park Service budget?</dt>
     <dd>FY 2017 Enacted: $2.932 billion</dd>
 </dl>
-<button id="btn1" type="button" data-id="1" class="btn bth-default">click</button>
+<button id="btn1" type="button" data-id="0" class="btn bth-default">click</button>
+<h3 class="national-parks-heading">Arches</h3>
+<ul>
+    <li>Covers a total area of 76,359 acres.</li>
+    <li>Number of people visited Arches in 2019 was 1,659,702</li>
+    <li>Was made a national park on November 12, 1971.</li>
+</ul>
+
+<h3 class="national-parks-heading">Carlsbad Caverns</h3>
+<ul>
+    <li>Covers a total area of 79,766 acres.</li>
+    <li>The caves in Carlsbad Caverns are 56°F throughout the year, with high humidity.</li>
+    <li>At present there are 117 known caves in the park.</li>
+</ul>
+
+<h3 class="national-parks-heading">Badlands</h3>
+<ul>
+    <li>Covers a total area of 244,000 acres.</li>
+    <li>It  used to be a sea.</li>
+    <li>The entrance fee for Badlands is $25 per vehicle per week</li>
+</ul>
+<button id="btn2" type="button" data-id="1" class="btn bth-default">click</button>
+
 <script src="js/jsQuery.js"></script>
 <script>
     "use strict";
 
     $(document).ready(function() {
 
-        $('#btn1').click(function (){
-        $('dd').toggleClass('invisible');
-    })})
-   $('dt').each(function (){
-$(this).click(e=>{
-    e.preventDefault()
-    $(this).toggleClass()
-})})
+        $('#btn1').click(function () {
+            $('dd').toggleClass('invisible');
+        })
+        $('dt').each(function () {
+            $(this).click(e => {
+                e.preventDefault()
+                $(this).toggleClass()
 
+            })
+        })
+        $('#btn2').click(function () {
+            $( "ul li:nth-last-child(1)" ).addClass( "yellow" );
+
+
+            // $('li').last().addClass('yellow');
+
+
+        })
+        $('h3').click(e=>{
+            e.preventDefault();
+            $('ul').children().css('font-weight','bold')
+        })
+        $('li').click(function (){
+            $( "ul li:nth-last-child(1)" ).css( "color","blue" );
+        })
+
+    })
 </script>
+
 </body>
 </html>
