@@ -47,6 +47,10 @@
     </style>
 </head>
 <body>
+<div class="hidding">
+    <h1>"Would you like to sign up for our newsletter?"</h1>
+    <span class="x">x</span>
+</div>
 <p>10 FAQs about national parks</p>
 
 <dl>
@@ -164,7 +168,13 @@
         })
 
     })
+    $('span').click(function (){
+$('.hidding').hide()
+    })
 
+
+
+    //bonus
     var randomPic = ['img/images.jpg','img/download1.jpeg','img/download.jpeg','img/23344937.png'];
     var changePic = function(){
         $("#btn-top").click(function(){
