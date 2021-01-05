@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style>
+
         .invisible {
             visibility: hidden;
         }
@@ -90,6 +91,7 @@
     <dd>FY 2017 Enacted: $2.932 billion</dd>
 </dl>
 <button id="btn1" type="button" data-id="0" class="btn bth-default">click</button>
+<button id="btn5" type="button" data-id="0" class="btn bth-default">click</button>
 <h3 class="national-parks-heading">Arches</h3>
 <ul>
     <li>Covers a total area of 76,359 acres.</li>
@@ -111,28 +113,28 @@
     <li>The entrance fee for Badlands is $25 per vehicle per week</li>
 </ul>
 <button id="btn2" type="button" data-id="1" class="btn bth-default">click</button>
-<div>
-<div class="frame1 frame col-3">
-    <img src="img/23344937.png" alt="" id="pic1">
-</div>
-<div class="button1">
-    <button class="topDown" id="btn1-left-top">Swap Image</button>
-</div>
+<!--<div class="col-12 ">-->
+<!--<div class="frame1 frame col-3">-->
+<!--    <img src="img/23344937.png" alt="" id="pic1">-->
+<!--</div>-->
+<!--<div class="button1">-->
+<!--    <button class="topDown" id="btn1-left-top">Swap Image</button>-->
+<!--</div>-->
 
-<div class="frame2 frame col-3">
-    <img src="img/download1.jpeg" alt="" id="pic2">
-</div>
-<div class="button2">
-    <button class="topDown" id="btn1-left-bottom">Swap Image</button>
-</div>
+<!--<div class="frame2 frame col-3">-->
+<!--    <img src="img/download1.jpeg" alt="" id="pic2">-->
+<!--</div>-->
+<!--<div class="button2">-->
+<!--    <button class="topDown" id="btn1-left-bottom">Swap Image</button>-->
+<!--</div>-->
 
-<div class="frame3 frame col-3">
-    <img src="img/images.jpg" alt="" id="pic3">
-</div>
-<div class="button3">
-    <button class="rightButtons" id="btn1-right-top">Swap Image</button>
-</div>
-</div>
+<!--<div class="frame3 frame col-3">-->
+<!--    <img src="img/images.jpg" alt="" id="pic3">-->
+<!--</div>-->
+<!--<div class="button3">-->
+<!--    <button class="rightButtons" id="btn1-right-top">Swap Image</button>-->
+<!--</div>-->
+<!--</div>-->
 <script src="js/jsQuery.js"></script>
 <script>
     "use strict";
@@ -141,6 +143,14 @@
 
         $('#btn1').click(function () {
             $('dd').toggleClass('invisible');
+
+        })
+        $('#btn5').click(function () {
+            $('dt').toggleClass('random');
+
+        })
+        $('dd').click(function (){
+            $(this).addClass('invisible');
         })
         // $('dt').each(function () {
         //     $(this).click(e => {
@@ -177,74 +187,74 @@ $('.hidding').hide()
     })
     $('ul').hide();
     $('h3').click(function (){
-        $(this).next('ul').show()
+        $(this).next.slideToggle(1000   )('ul').show()
     })
-$("h2").hide().fadeIn(88888);
+$("h2").hide().delay(8000).fadeIn(500);
 
 
     //bonus
-    var randomPic = ['img/images.jpg','img/download1.jpeg','img/download.jpeg','img/23344937.png'];
-    var changePic = function(){
-        $("#btn-top").click(function(){
-            var randomIndex1 = Math.floor(Math.random() * randomPic.length);
-            var randomIndex2 = (randomIndex1+1)%(randomPic.length);
-            var randomIndex3 = (randomIndex2+1)%(randomPic.length);
-            var randomIndex4 = (randomIndex3+1)%(randomPic.length);
-
-            $('#pic1').attr('src', randomPic[randomIndex1]);
-            $('#pic2').attr('src', randomPic[randomIndex2]);
-            $('#pic3').attr('src', randomPic[randomIndex3]);
-            $('#pic4').attr('src', randomPic[randomIndex4]);
-
-        });
-    };
-    changePic()
-    $('#btn1-left-top').click(function(){
-        // var audio = new Audio('audio/ring-get.mp3');
-        // audio.play();
-        var first = $('#pic1').attr('src');
-        var picIndex = 1;
-        //Get random number up to 4, but if it is 1, try again
-        while (picIndex === 1) {
-            picIndex = Math.floor((Math.random() * 10) % 4) + 1;
-        }
-        //Swap images
-        var swap = $('#pic'+ picIndex).attr('src');
-        $('#pic1').attr("src", swap);
-        $('#pic'+ picIndex).attr('src', first);
-    });
-
-
-    $('#btn1-left-bottom').click(function(){
-        var first = $('#pic2').attr('src');
-        var picIndex = 2;
-        //Get random number up to 4, but if it is 1, try again
-        while (picIndex === 2) {
-            picIndex = Math.floor((Math.random() * 10) % 4) + 1;
-        }
-        //Swap images
-        var swap = $('#pic'+ picIndex).attr('src');
-        $('#pic2').attr("src", swap);
-        $('#pic'+ picIndex).attr('src', first);
-    });
-
-    $('#btn1-right-top').click(function(){
-
-        var first = $('#pic3').attr('src');
-        var picIndex = 3;
-        //Get random number up to 4, but if it is 1, try again
-        while (picIndex === 3) {
-            picIndex = Math.floor((Math.random() * 10) % 4) + 1;
-        }
-        //Swap images
-        var swap = $('#pic'+ picIndex).attr('src');
-        $('#pic3').attr("src", swap);
-        $('#pic'+ picIndex).attr('src', first);
-    });
-
-
-
-
+    // var randomPic = ['img/images.jpg','img/download1.jpeg','img/download.jpeg','img/23344937.png'];
+    // var changePic = function(){
+    //     $("#btn-top").click(function(){
+    //         var randomIndex1 = Math.floor(Math.random() * randomPic.length);
+    //         var randomIndex2 = (randomIndex1+1)%(randomPic.length);
+    //         var randomIndex3 = (randomIndex2+1)%(randomPic.length);
+    //         var randomIndex4 = (randomIndex3+1)%(randomPic.length);
+    //
+    //         $('#pic1').attr('src', randomPic[randomIndex1]);
+    //         $('#pic2').attr('src', randomPic[randomIndex2]);
+    //         $('#pic3').attr('src', randomPic[randomIndex3]);
+    //         $('#pic4').attr('src', randomPic[randomIndex4]);
+    //
+    //     });
+    // };
+    // changePic()
+    // $('#btn1-left-top').click(function(){
+    //     // var audio = new Audio('audio/ring-get.mp3');
+    //     // audio.play();
+    //     var first = $('#pic1').attr('src');
+    //     var picIndex = 1;
+    //     //Get random number up to 4, but if it is 1, try again
+    //     while (picIndex === 1) {
+    //         picIndex = Math.floor((Math.random() * 10) % 4) + 1;
+    //     }
+    //     //Swap images
+    //     var swap = $('#pic'+ picIndex).attr('src');
+    //     $('#pic1').attr("src", swap);
+    //     $('#pic'+ picIndex).attr('src', first);
+    // });
+    //
+    //
+    // $('#btn1-left-bottom').click(function(){
+    //     var first = $('#pic2').attr('src');
+    //     var picIndex = 2;
+    //     //Get random number up to 4, but if it is 1, try again
+    //     while (picIndex === 2) {
+    //         picIndex = Math.floor((Math.random() * 10) % 4) + 1;
+    //     }
+    //     //Swap images
+    //     var swap = $('#pic'+ picIndex).attr('src');
+    //     $('#pic2').attr("src", swap);
+    //     $('#pic'+ picIndex).attr('src', first);
+    // });
+    //
+    // $('#btn1-right-top').click(function(){
+    //
+    //     var first = $('#pic3').attr('src');
+    //     var picIndex = 3;
+    //     //Get random number up to 4, but if it is 1, try again
+    //     while (picIndex === 3) {
+    //         picIndex = Math.floor((Math.random() * 10) % 4) + 1;
+    //     }
+    //     //Swap images
+    //     var swap = $('#pic'+ picIndex).attr('src');
+    //     $('#pic3').attr("src", swap);
+    //     $('#pic'+ picIndex).attr('src', first);
+    // });
+    //
+    //
+    //
+    //
 
 
 
