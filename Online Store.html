@@ -3,6 +3,14 @@
 <html>
 <head>
     <title>Online Store</title>
+    <style>
+        .posiInventory{
+            color: blue
+        }
+        .itemTitle{
+            font-family: sans-serif;
+        }
+    </style>
 </head>
 <body>
 
@@ -54,8 +62,8 @@ $.get("data/inventory.json").done(function (data,status,jqXhr){
 
                 var productHtml="<tr>"
                     //add this individual product to html
-                    +'<td>'+product.title+'</td>'
-                    +'<td>'+product.quantity+'</td>'
+                    +'<td class = itemTitle>'+product.title+'</td>'
+                    +'<td class =posiInventory>'+product.quantity+'</td>'
                     +'<td>'+product.price+'</td>'
                     +'<td>'+product.categories+'</td>'
                     +"</tr>"
