@@ -40,5 +40,15 @@
             "outdoor"
         ],
         "price": 2000
+    },
+    {
+        "title": "twisted tea",
+        "quantity": 10,
+        "categories": [
+            "thang",
+            "alcohol",
+            "indoor/outdoor"
+        ],
+        "price": 2
     }
 ]

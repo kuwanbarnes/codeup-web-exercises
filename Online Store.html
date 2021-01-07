@@ -33,23 +33,36 @@ $.get("data/inventory.json").done(function (data,status,jqXhr){
 
     // TODO: Take the data from inventory.json and append it to the products table
 
-    $.get("data/inventory.json").done(function (data,status){
-        data.forEach(function (product){
-
-            var productHtml="<tr>"
-            //add this individual product to html
-                console.log(product.title)
-                productHtml+='<td>'+product.title+'</td>'
-                productHtml+='<td>'+product.quantity+'</td>'
-                productHtml+='<td>'+product.price+'</td>'
-                productHtml+='<td>'+product.categories+'</td>'
-            productHtml+="</tr>"
-            $("#insertProducts").append(productHtml)
-        })
-        console.log(data)
-    })
+    // $.get("data/inventory.json").done(function (data){
+    //     data.forEach(function (product){
+    //
+    //         var productHtml="<tr>"
+    //         //add this individual product to html
+    //             +'<td>'+product.title+'</td>'
+    //             +'<td>'+product.quantity+'</td>'
+    //             +'<td>'+product.price+'</td>'
+    //             +'<td>'+product.categories+'</td>'
+    //         +"</tr>"
+    //         $("#insertProducts").append(productHtml)
+    //     })
+    //     console.log(data)
+    // })
     $('#btn1').click(function () {
-        $('#insertProducts').ajax.reload(true)
+        $('#insertProducts').empty();
+        $.get("data/inventory.json").done(function (data){
+            data.forEach(function (product){
+
+                var productHtml="<tr>"
+                    //add this individual product to html
+                    +'<td>'+product.title+'</td>'
+                    +'<td>'+product.quantity+'</td>'
+                    +'<td>'+product.price+'</td>'
+                    +'<td>'+product.categories+'</td>'
+                    +"</tr>"
+                $("#insertProducts").append(productHtml)
+            })
+
+        })
         console.log("button works")
 
     })
