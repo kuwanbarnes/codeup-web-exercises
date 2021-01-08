@@ -8,11 +8,41 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <style>
-        .card-body {
+        /*body{*/
+        /*    background-color: grey;*/
+        /*}*/
+        .navbar-brand {
+            font-size: 2em;
+            color: #E6ECF0;
+        }
+        .card_container{
+            width: 19%;
+        }
+        .card-body ,.card-header {
 
             border-width: thin;
             border: solid #E6ECF0;
         }
+        .card-header{
+            background-color: #848487;
+            border-bottom: none;
+        }
+        .card-body{
+            background-color: #cccccc;
+        }
+        .img{
+            display: flex;
+            justify-self: center;
+            justify-content: center;
+        }
+.maxTemp{
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+}
+.input-group{
+    width: 20rem;
+}
 
         #map {
             /* the width and height may be set to any size */
@@ -30,24 +60,37 @@
 
         .container-fluid {
             background-color: #3B94D9;
+            height: 4rem;
+            font-size: 20px;
+            color: #E6ECF0;
+        }
+        .places{
+
         }
     </style>
 </head>
 <body>
-<nav class="navbar navbar-light bg-light">
+<nav class="navbar navbar-light bg-light ">
     <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">Weather Map</span>
+        <span class="navbar-brand mb-0 h1 ">Weather Map</span>
         <p class="current-city">current city:</p>
     </div>
 </nav>
+<div class="input-group mb-3">
+   <p class="places">Places</p>
+    <input type="text" class="form-control" id ="input" placeholder="Location" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <button class="btn btn-outline-secondary" type="button" id="button">Button</button>
+</div>
 <div class="container">
     <div class="row row-cols-6 d-flex justify-content-evenly">
-        <div id="day01">
+        <div class="card_container" id="day01">
 
             <div class="card-header">Header</div>
             <div class="card-body">
                 <p class="maxTemp"></p>
+                <div class='img'></div>
                 <hr>
+
                 <p class="description">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 <hr>
@@ -58,12 +101,14 @@
                 <p class="pressure"></p>
             </div>
         </div>
-        <div id="day02">
+        <div class="card_container"  id="day02">
 
             <div class="card-header">Header</div>
             <div class="card-body">
                 <p class="maxTemp"></p>
+                <div class='img'></div>
                 <hr>
+
                 <p class="description">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 <hr>
@@ -74,12 +119,14 @@
                 <p class="pressure"></p>
             </div>
         </div>
-        <div id="day03">
+        <div class="card_container"  id="day03">
 
             <div class="card-header">Header</div>
             <div class="card-body">
                 <p class="maxTemp"></p>
+                <div class='img'></div>
                 <hr>
+
                 <p class="description">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 <hr>
@@ -90,12 +137,14 @@
                 <p class="pressure"></p>
             </div>
         </div>
-        <div id="day04">
+        <div class="card_container" id="day04">
 
             <div class="card-header">Header</div>
             <div class="card-body">
                 <p class="maxTemp"></p>
+                <div class='img'></div>
                 <hr>
+
                 <p class="description">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 <hr>
@@ -106,12 +155,14 @@
                 <p class="pressure"></p>
             </div>
         </div>
-        <div id="day05">
+        <div class="card_container" id="day05">
 
-            <div class="card-header" id="date">Header</div>
+            <div class="card-header">Header</div>
             <div class="card-body">
                 <p class="maxTemp"></p>
+                <div class='img'></div>
                 <hr>
+
                 <p class="description">Some quick example text to build on the card title and make up the bulk of the
                     card's content.</p>
                 <hr>
@@ -120,13 +171,15 @@
                 <p class="wind"></p>
                 <hr>
                 <p class="pressure"></p>
-            </div>
         </div>
 
 
     </div>
 </div>
+
+
 <div id='map'></div>
+<pre id="coordinates" class="coordinates"></pre>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
         crossorigin="anonymous"></script>
@@ -134,9 +187,9 @@
 <!--Script for weatherMapHTML-->
 <script src="js/jsQuery.js"></script>
 <!--API keys for OpenWeather-->
-<script src='js/keys.js'></script>
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
 
+<script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+<script src='js/keys.js'></script>
 <script src="js/mapbox-geocoder-utils.js"></script>
 <!--OpenWeather js Library-->
 <script src="js/weather_map.js"></script>
