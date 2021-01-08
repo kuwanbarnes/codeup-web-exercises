@@ -15,34 +15,41 @@
             font-size: 2em;
             color: #E6ECF0;
         }
-        .card_container{
-            width: 19%;
+
+        .card_container {
+            width: 20%;
         }
-        .card-body ,.card-header {
+
+        .card-body, .card-header {
 
             border-width: thin;
             border: solid #E6ECF0;
         }
-        .card-header{
+
+        .card-header {
             background-color: #848487;
             border-bottom: none;
         }
-        .card-body{
+
+        .card-body {
             background-color: #cccccc;
         }
-        .img{
+
+        .img {
             display: flex;
             justify-self: center;
             justify-content: center;
         }
-.maxTemp{
-    display: flex;
-    justify-self: center;
-    justify-content: center;
-}
-.input-group{
-    width: 20rem;
-}
+
+        .maxTemp {
+            display: flex;
+            justify-self: center;
+            justify-content: center;
+        }
+
+        .input-group {
+            width: 20rem;
+        }
 
         #map {
             /* the width and height may be set to any size */
@@ -64,7 +71,8 @@
             font-size: 20px;
             color: #E6ECF0;
         }
-        .places{
+
+        .places {
 
         }
     </style>
@@ -77,8 +85,9 @@
     </div>
 </nav>
 <div class="input-group mb-3">
-   <p class="places">Places</p>
-    <input type="text" class="form-control" id ="input" placeholder="Location" aria-label="Recipient's username" aria-describedby="button-addon2">
+    <p class="places">Places</p>
+    <input type="text" class="form-control" id="input" placeholder="Location" aria-label="Recipient's username"
+           aria-describedby="button-addon2">
     <button class="btn btn-outline-secondary" type="button" id="button">Button</button>
 </div>
 <div class="container">
@@ -101,7 +110,7 @@
                 <p class="pressure"></p>
             </div>
         </div>
-        <div class="card_container"  id="day02">
+        <div class="card_container" id="day02">
 
             <div class="card-header">Header</div>
             <div class="card-body">
@@ -119,7 +128,7 @@
                 <p class="pressure"></p>
             </div>
         </div>
-        <div class="card_container"  id="day03">
+        <div class="card_container" id="day03">
 
             <div class="card-header">Header</div>
             <div class="card-body">
@@ -171,28 +180,28 @@
                 <p class="wind"></p>
                 <hr>
                 <p class="pressure"></p>
+            </div>
+
+
         </div>
-
-
     </div>
-</div>
 
 
-<div id='map'></div>
-<pre id="coordinates" class="coordinates"></pre>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
-        crossorigin="anonymous"></script>
+    <div id='map'></div>
+    <pre id="coordinates" class="coordinates"></pre>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+            crossorigin="anonymous"></script>
 
-<!--Script for weatherMapHTML-->
-<script src="js/jsQuery.js"></script>
-<!--API keys for OpenWeather-->
+    <!--Script for weatherMapHTML-->
+    <script src="js/jsQuery.js"></script>
+    <!--API keys for OpenWeather-->
 
-<script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
-<script src='js/keys.js'></script>
-<script src="js/mapbox-geocoder-utils.js"></script>
-<!--OpenWeather js Library-->
-<script src="js/weather_map.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.0.0/mapbox-gl.js'></script>
+    <script src='js/keys.js'></script>
+    <script src="js/mapbox-geocoder-utils.js"></script>
+    <!--OpenWeather js Library-->
+    <script src="js/weather_map.js"></script>
 
 </body>
 </html>

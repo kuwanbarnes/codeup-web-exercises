@@ -10,7 +10,7 @@ $(document).ready(function data() {
         console.log(data)
         var dayCount = 1
         for (var i = 0; i < 40; i++) {
-            if (i % 8 === 0) {
+            if (i % 8  === 0) {
                 var weatherObj = {
                     timeStamp: data.list[i].dt_txt,
                     tempMin: data.list[i].main.temp_min,
@@ -35,8 +35,8 @@ $(document).ready(function data() {
                 $(divId + ' .card-body .img').html(iconImage)
                 $(divId + ' .card-body .description').html('description: ' + weatherObj.description)
                 $(divId + ' .card-body .humidity').html('Humidity: ' + weatherObj.humidity + '%')
-                $(divId + ' .card-body .wind').html('Wind: ' + weatherObj.wind)
-                $(divId + ' .card-body .pressure').html('Pressure: ' + weatherObj.pressure)
+                $(divId + ' .card-body .wind').html('Wind: ' + weatherObj.wind+'mph')
+                $(divId + ' .card-body .pressure').html('Pressure: ' + weatherObj.pressure+'mmHg')
                 $('.container-fluid .current-city').html('current city: ' + weatherObj.city)
 
                 if (i === 1) {
@@ -106,10 +106,10 @@ $(document).ready(function data() {
         e.preventDefault();
         let search = $('#input').val();
         console.log(search);
-        geocode(search,mapboxToken);
+        geocode(search, mapboxToken);
     });
 
-    function geocode(search,token) {
+    function geocode(search, token) {
 
         var baseUrl = 'https://api.mapbox.com';
         var endPoint = '/geocoding/v5/mapbox.places/';
@@ -123,17 +123,17 @@ $(document).ready(function data() {
 
 
             }).then(function (data) {
-                resData=data.features[0].center;
+                resData = data.features[0].center;
                 // console.log(resData);
                 // console.log( data.features[0].center)
                 $.get("https://api.openweathermap.org/data/2.5/forecast/", {
                     APPID: OPEN_WEATHER_APPID,
-                  lat:resData[1],
-                    lon:resData[0],
+                    lat: resData[1],
+                    lon: resData[0],
                     // q: search,
                     units: "imperial",
                     exclude: 'minutely,hourly'
-                }).done(function (data){
+                }).done(function (data) {
                     var dayCount = 1;
                     for (var i = 0; i < 40; i++) {
                         if (i % 8 === 0) {
@@ -163,8 +163,8 @@ $(document).ready(function data() {
                             $(divId + ' .card-body .img').html(iconImage)
                             $(divId + ' .card-body .description').html('description: ' + weatherObj.description)
                             $(divId + ' .card-body .humidity').html('Humidity: ' + weatherObj.humidity + '%')
-                            $(divId + ' .card-body .wind').html('Wind: ' + weatherObj.wind)
-                            $(divId + ' .card-body .pressure').html('Pressure: ' + weatherObj.pressure)
+                            $(divId + ' .card-body .wind').html('Wind: ' + weatherObj.wind+ "mph")
+                            $(divId + ' .card-body .pressure').html('Pressure: ' + weatherObj.pressure+'mmHg')
                             $('.container-fluid .current-city').html('current city: ' + weatherObj.city)
                             // $('.container .card-header').html(weatherObj.timeStamp)
                             if (i === 1) {
@@ -186,12 +186,18 @@ $(document).ready(function data() {
                 })
 
                 console.log(data);
+                reverseGeocode(resData, mapboxToken).then(function(placeName) {
+                    // set the text of the popup to "New York City" (for example)
+                    console.log("after reverse geocode, the place name is: " + placeName);
+                    map.flyTo(resData);
                 })
-                return data.features[0].center;
+            })
+        return data.features[0].center;
 
-            };
+    };
 
-    });
+
+});
 
 
 
