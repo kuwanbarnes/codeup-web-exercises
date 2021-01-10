@@ -33,7 +33,7 @@ $(document).ready(function data() {
                 let iconUrl = `https://openweathermap.org/img/wn/${weatherObj.icon}@2x.png`
                 let iconImage = `<img src= ${iconUrl} width="50" height="50" alt="">`
                 $(divId + ' .card-body .img').html(iconImage)
-                $(divId + ' .card-body .description').html('description: ' + weatherObj.description)
+                $(divId + ' .card-body .description').html(weatherObj.description)
                 $(divId + ' .card-body .humidity').html('Humidity: ' + weatherObj.humidity + '%')
                 $(divId + ' .card-body .wind').html('Wind: ' + weatherObj.wind+'mph')
                 $(divId + ' .card-body .pressure').html('Pressure: ' + weatherObj.pressure+'mmHg')
@@ -78,6 +78,8 @@ $(document).ready(function data() {
         .setLngLat([-98.416045, 29.5029648])
         .addTo(map);
 
+
+
     function onDragEnd() {
         var lngLat = marker.getLngLat();
         coordinates.style.display = 'block';
@@ -107,6 +109,8 @@ $(document).ready(function data() {
         let search = $('#input').val();
         console.log(search);
         geocode(search, mapboxToken);
+
+
     });
 
     function geocode(search, token) {
@@ -133,7 +137,9 @@ $(document).ready(function data() {
                     // q: search,
                     units: "imperial",
                     exclude: 'minutely,hourly'
+
                 }).done(function (data) {
+                    map.flyTo({center: [resData[1], resData[0]], zoom: 3});
                     var dayCount = 1;
                     for (var i = 0; i < 40; i++) {
                         if (i % 8 === 0) {
@@ -161,7 +167,7 @@ $(document).ready(function data() {
                             let iconUrl = `https://openweathermap.org/img/wn/${weatherObj.icon}@2x.png`
                             let iconImage = `<img src= ${iconUrl} width="50" height="50" alt="">`
                             $(divId + ' .card-body .img').html(iconImage)
-                            $(divId + ' .card-body .description').html('description: ' + weatherObj.description)
+                            $(divId + ' .card-body .description').html(weatherObj.description)
                             $(divId + ' .card-body .humidity').html('Humidity: ' + weatherObj.humidity + '%')
                             $(divId + ' .card-body .wind').html('Wind: ' + weatherObj.wind+ "mph")
                             $(divId + ' .card-body .pressure').html('Pressure: ' + weatherObj.pressure+'mmHg')
@@ -189,7 +195,7 @@ $(document).ready(function data() {
                 reverseGeocode(resData, mapboxToken).then(function(placeName) {
                     // set the text of the popup to "New York City" (for example)
                     console.log("after reverse geocode, the place name is: " + placeName);
-                    map.flyTo(resData);
+                    map.flyTo(data.features[0].center);
                 })
             })
         return data.features[0].center;
