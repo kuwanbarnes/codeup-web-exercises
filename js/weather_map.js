@@ -139,7 +139,7 @@ $(document).ready(function data() {
                     exclude: 'minutely,hourly'
 
                 }).done(function (data) {
-                    map.flyTo({center: [resData[1], resData[0]], zoom: 3});
+                    map.flyTo({center: [resData[0], resData[1]], zoom: 3});
                     var dayCount = 1;
                     for (var i = 0; i < 40; i++) {
                         if (i % 8 === 0) {
