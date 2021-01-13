@@ -59,13 +59,12 @@ $(document).ready(function() {
         return total.email.length > user.email.length ? total.email : user;
 
     });
-    console.log(longestEmail);
+    console.log("The longest email: " + longestEmail);
 
 
 
-    var userNames = users.reduce((total,user,i)=>{
-        if(i === user.length-1)
-            return  total += user.name + "."
+    var userNames = users.reduce(function (total,user,i){
+        if(i === users.length -1) return  total += user.name + "."
             return total += user.name + ","
     },"");
     console.log("All users: "+ userNames);
