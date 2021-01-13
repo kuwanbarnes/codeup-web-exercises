@@ -108,14 +108,28 @@ var idsES6 = mbpModels.map(mbp => mbp.id);
 
     /********************************* 1 *********************************/
     //  1. Use forEach()
+    let forEach2011= [];
+    mbpModels.forEach(function (mbp){
+        let thisModelYear = getYear(mbp.year);
+        if(thisModelYear >= 2011){
+            //list description and year string
+            forEach2011.push(mbp.desc +'<strong>(' + mbp.year +')</strong>');
+        }
+    });
+        $("#filterForEach").html(createList(forEach2011));
 
     /********************************* 2 *********************************/
     //  2. Use filter()
-
+let filter2011 = mbpModels.filter(function (mbp){
+    return getYear(mbp.year) >= 2011;
+        });
+    console.table(filter2011);
     /********************************* 3 *********************************/
     //  3. Use ES6
 
-
+let es62011 = mbpModels.filter(mbp => getYear(mbp.year) >= 2011);
+    console.log("es62011");
+    console.log(es62011);
     // *****************   ******     ******************//
     // **************  TODO: REDUCE() ******************//
     // *****************   ******     ******************//
@@ -127,12 +141,23 @@ var idsES6 = mbpModels.map(mbp => mbp.id);
 
     /********************************* 1 *********************************/
     //  1. Use forEach()
-
+let totalValueFE= 0;
+mbpModels.forEach(function (mbp){
+    totalValueFE += mbp.price;
+})
+    console.log("total foreach:" + totalValueFE);
+$("#reduceForEach").html(commaThousands(totalValueFE));
     /********************************* 2 *********************************/
     //  2. Use reduce()
-
+let totalValueReduce = mbpModels.reduce(function (total,mbp){
+    return total += mbp.price;// 0 + 3199-first iteration
+        }, 0);
+console.log("total value reduce" + totalValueReduce);
     /********************************* 3 *********************************/
     //  3. Use ES6
+    let totalValueES6 = mbpModels.reduce((total,mbp) =>total + mbp.price, 0);
+    console.log("totalValueES6: " + commaThousands(totalValueES6));
+
 
     /**************************** LEAVE IN FOR STUDENTS **(********************************/
     /*********************** function to get commas in number *****************************/
